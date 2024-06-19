@@ -6,11 +6,13 @@ interface Props {
   label: string;
   color?: string;
   doubleSize?: boolean;
+  blackText?: boolean;
 }
 export const CalculatorButton = ({
   label,
   color = colors.darkGray,
   doubleSize = false,
+  blackText = false,
 }: Props) => {
   return (
     <Pressable
@@ -20,7 +22,13 @@ export const CalculatorButton = ({
         width: doubleSize ? 180 : 80,
         opacity: pressed ? 0.8 : 1,
       })}>
-      <Text style={styles.buttonText}>{label}</Text>
+      <Text
+        style={{
+          ...styles.buttonText,
+          color: blackText ? 'black' : 'white',
+        }}>
+        {label}
+      </Text>
     </Pressable>
   );
 };
