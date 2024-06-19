@@ -1,19 +1,19 @@
 import React from 'react';
-import {Pressable, Text} from 'react-native';
-import {styles, colors} from '../../config/theme/app-theme';
+import {Pressable, StyleSheet, Text} from 'react-native';
+import {colors} from '../../config/theme/app-theme';
 
 interface Props {
   label: string;
-  color?: string;
+  color: string;
+  colorText: string;
   doubleSize?: boolean;
-  blackText?: boolean;
   onPress: () => void;
 }
 export const CalculatorButton = ({
   label,
-  color = colors.darkGray,
+  color,
+  colorText,
   doubleSize = false,
-  blackText = false,
   onPress,
 }: Props) => {
   return (
@@ -25,13 +25,31 @@ export const CalculatorButton = ({
         width: doubleSize ? 180 : 80,
         opacity: pressed ? 0.8 : 1,
       })}>
-      <Text
-        style={{
-          ...styles.buttonText,
-          color: blackText ? 'black' : 'white',
-        }}>
+      <Text style={[styles.buttonText, {color: colorText}]}>{label}</Text>
+      {/* <Text style={[styles.buttonText, {color: blackText ? 'black' : 'white'}]}>
         {label}
-      </Text>
+      </Text> */}
     </Pressable>
   );
 };
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: colors.darkGray,
+    borderRadius: 20,
+    borderColor: '#2e313a',
+    borderWidth: 2,
+    height: 80,
+    justifyContent: 'center',
+    marginHorizontal: 10,
+    width: 80,
+    shadowRadius: 20,
+  },
+  buttonText: {
+    color: '#a5a9b3',
+    fontSize: 30,
+    fontWeight: '400',
+    padding: 10,
+    textAlign: 'center',
+  },
+});

@@ -7,7 +7,15 @@ export const colors = {
 
   textPrimary: 'white',
   textSecondary: '#666666',
-  background: '#000000',
+  // background: '#000000',
+  background: '#252122',
+
+  btnDark: '#2D2D2D',
+  btnLight: '#5c6270',
+  btnOrange: '#FF9427',
+
+  txtDark: '#a5a9b3',
+  txtLight: '#ffffff',
 };
 
 export const styles = StyleSheet.create({
@@ -38,20 +46,5 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 18,
     paddingHorizontal: 10,
-  },
-  button: {
-    backgroundColor: colors.darkGray,
-    borderRadius: 100,
-    height: 80,
-    justifyContent: 'center',
-    marginHorizontal: 10,
-    width: 80,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 30,
-    fontWeight: '300',
-    padding: 10,
-    textAlign: 'center',
   },
 });
