@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     color: colors.textPrimary,
     fontSize: 70,
     fontWeight: '400',
-    marginBottom: 10,
+    marginBottom: 5,
     textAlign: 'right',
   },
   subResult: {
@@ -46,5 +46,16 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 18,
     paddingHorizontal: 10,
+  },
+  resultContainer: {
+    flex: 1,
+    paddingHorizontal: 30,
+    paddingBottom: 20,
+    flexDirection: 'column-reverse',
+  },
+  buttonsContainer: {
+    flex: 2,
+    flexDirection: 'column',
+    // flexWrap: 'wrap',
   },
 });

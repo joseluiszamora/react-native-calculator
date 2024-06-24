@@ -1,3 +1,4 @@
+import {evaluate} from 'mathjs';
 import {useEffect, useRef, useState} from 'react';
 
 enum Operator {
@@ -34,6 +35,10 @@ export const useCalculator = () => {
     setPrevNumber('0');
     lastOperation.current = undefined;
     setFormula('');
+  };
+
+  const evaling = () => {
+    console.log(evaluate('5-268'));
   };
 
   // Borrar el último número
@@ -173,5 +178,6 @@ export const useCalculator = () => {
     substractOperation,
     addOperation,
     calculateResult,
+    evaling,
   };
 };
